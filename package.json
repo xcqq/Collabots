@@ -1,0 +1,14 @@
+{
+  "name": "collabots",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --parallel -r dev",
+    "dev:server": "pnpm --filter @collabots/server dev",
+    "dev:web": "pnpm --filter @collabots/web dev",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

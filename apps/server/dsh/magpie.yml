@@ -1,0 +1,23 @@
+# Collabots profile overlay for the DeepSeek Harness.
+#
+# The headless profile ships without any configured provider, so we register
+# the local magpie gateway as an OpenAI-compatible provider and point the
+# default agent model at it. Passed with `dsh --patch <this file>`.
+- id: llm-pi-ai
+  config:
+    providers:
+      magpie:
+        displayName: Magpie
+        apiKeyEnv: MAGPIE_GATEWAY_KEY
+        api: openai-completions
+        baseURL: http://127.0.0.1:3425/v1
+        models:
+          - id: deepseek/deepseek-flash
+            name: DeepSeek-V4.1-Flash
+            contextWindow: 1048576
+            maxTokens: 393216
+            input: [text, image]
+- id: agent-default-model
+  config:
+    provider: magpie
+    model: "deepseek/deepseek-flash"

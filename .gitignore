@@ -1,0 +1,26 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.collabots/
+data/
+
+# Local state, credentials, and machine-specific settings
+.remember/
+.claude/settings.local.json
+.env
+.env.*
+!.env.example
+.npmrc
+.netrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated and editor-local files
+coverage/
+.vscode/settings.json
